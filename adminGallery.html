@@ -96,8 +96,8 @@
              for(var i=0; i<arr.length;i++){
               
               console.log(dta + " " +arr[i].url );
-                    if(arr[i].url!=dta){
-                      console.log(i);
+                    if(arr[i].url==dta){
+                      //console.log(i);
                        arr.splice((i+1),1);
                        alert("image successfully delete");
                        modal.style.display= "none";
