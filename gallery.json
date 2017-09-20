@@ -1,0 +1,48 @@
+var nimg={
+
+	"items":[
+{
+	"url":"imgs/1.jpg",
+	"caption": "Z square mall, Kanpur",
+},
+{
+		"url":"imgs/2.jpg",
+	"caption": "Z square mall, Kanpur",	
+},
+{
+		"url":"imgs/3.jpg",
+	"caption": "Z square mall, Kanpur",	
+},
+{
+		"url":"imgs/4.jpg",
+	"caption": "Z square mall, Kanpur"	
+},
+{
+		"url":"imgs/5.jpg",
+	"caption": "Z square mall, Kanpur"	
+},
+{
+		"url":"imgs/6.jpg",
+	"caption": "Z square mall, Kanpur"
+},
+{
+		"url":"imgs/7.jpg",
+	"caption": "Z square mall, Kanpur"	
+},
+{
+		"url":"imgs/8.jpg",
+	"caption": "Z square mall, Kanpur"
+},
+{
+		"url":"imgs/9.jpg",
+	"caption": "Z square mall, Kanpur"	
+},
+{
+		"url":"imgs/10.jpg",
+	"caption": "Z square mall, Kanpur"	
+},
+{
+		"url":"imgs/11.jpg",
+	"caption": "Z square mall, Kanpur"	
+}]
+};

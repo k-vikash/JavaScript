@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">  
+      
+<html>
+<head>
+    <title>Contact Me</title>
+    <link rel="stylesheet" type="text/css" href="p.css">
+    <script type="text/javascript" src="dcl.js"></script>
+</head>
+
+<body onload="Dgclock();">
+
+     <div id="wrapper">
+        <form name="clock" onSubmit="0" runat="server">
+       		 <input type="text" align="right"  name="face" size=10 disabled="disabled"; value="" style="background-color:grey; text-align:center;font-size:40px;float:right; color:black; height:50px;text-shadow: black 0px 2px 0px;font-weight:1200;" >
+        </form>
+        <h1><i>Contact Me</i></h1>
+         <div align="right">
+        <form align="right" action="http://www.google.com/search" target="_blank" method="GET">
+        		 <input type="textbox" name="q">
+       		 <input type="submit" value="search"style="cursor:pointer;">
+        </form>
+         </div>
+        	
+        	<div id=size class="mm">
+		       <table><tr>
+		       		<td><a class="xy" href="index.html" >HOME</a></td> 
+            	 	<td><a class="xy" href="aboutme.html" >ABOUT ME</a></td>
+             		<td> <a class="xy" href="gallery.html">GALLERY</a></td>
+           			<td><a class="xy" href="cme.html">CONTACT ME</a></td></tr> 
+           	</table>
+         </div>  
+         <div class="left-div">
+        		<img class="clg" src="m2.jpg">
+         </div>
+         <div class="right-divn">
+        		<div class="container">  
+  					<form id="contact" name="myform" action="mailto:vikash.kumar@zemosolabs.com" method="post">
+   				<h3>Contact me</h3>
+   					 <fieldset>
+     							 <input placeholder="Your name" name="name" type="text" tabindex="1" required>
+  						 </fieldset>
+    					 <fieldset>
+      						 <input placeholder="Your Email Address" name="email_id" type="email" tabindex="2" required>
+   				     </fieldset>
+                    <fieldset>
+     							 <textarea placeholder="Write to me...." name="box" tabindex="3" required></textarea>
+    					  </fieldset>
+   					  <fieldset>
+      						  <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+    					  </fieldset>
+  					</form>
+ 					<a class="clg5" href="https://www.facebook.com/vikash.anurag.1" target="_blank"> <img class="clg2" src="fb.jpg"></a>
+       			<a class="clg5" href="http://www.linkedin.com/nhome/?trk=" target="_blank"><img  class="clg2" src="ln.png"></a>
+        			<a class="clg5" href="http://www.quora.com/Vikash-Anurag" target="_blank"><img class="clg2" src="q.png"></a>
+   
+				</div>
+			</div>
+			<script type="text/javascript" >
+				function validateForm() {
+   				 var x = document.forms["myform"]["email_id"].value;
+    				 var atpos = x.indexOf("@");
+                var dotpos = x.lastIndexOf(".");
+                     if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+                               alert("Not a valid e-mail address");
+                     			 return false;
+                     }
+				}			
+			</script>
+
+	 </div>
+	 <h5 class="lm">Copyright@ Vikash Kumar.</h5>
+</body>
+</html>

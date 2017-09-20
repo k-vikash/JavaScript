@@ -1,0 +1,195 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>My Gallery</title>
+<link rel="stylesheet" type="text/css" href="p.css">
+<link rel="stylesheet" type="text/css" href="pop.css">
+ <script src="jquery-3.2.1.js"></script>
+<script type="text/javascript" src="dcl.js"></script>
+</head>
+<body onload="Dgclock();">
+	<div id="wrapper">
+     <form name="clock" onSubmit="0" runat="server">
+        <input type="text" align="right"  name="face" size=20 disabled="disabled"; value="" style="background-color:grey; text-align:center;font-size:40px;float:right; color:black; height:50px;text-shadow: black 0px 2px 0px;font-weight:1200;" >
+     </form>
+    <h1><i>Gallery<i></h1>
+     
+    <div align="right">
+    <form  action="http://www.google.com/search" target="_blank" method="GET">
+    <input type="textbox" name="q">
+    <input type="submit" value="search"style="cursor:pointer;">
+    </form>
+    </div>
+    <div id=size class="mm">
+       <table><tr><td>
+           <a class="xy" href="index.html" >HOME</a></td> 
+          <td><a class="xy" href="aboutme.html">ABOUT ME</a></td>
+            <td> <a class="xy" href="gallery.html">GALLERY</a></td>
+           <td><a class="xy" href="cme.html">CONTACT ME</a></td></tr> </table>
+    </div> 
+    <div id="image_file" style="width:100%"></div>
+    <script type="text/javascript" src="gallery.js"></script>
+    <!-- pop the image -->
+<div id="myModal" class="modal">
+  <span class="closeN">&times;</span>
+  <span class="delete">Delete</span>
+  <span class="edit">Edit</span>
+  <img class="modal-content" id="img01">
+ 
+</div> 
+<!-- loading image from json file -->
+    <script type="text/javascript">
+      myFunction(arr);
+      function myFunction(arr){
+        var out="";
+        //var imgId="";
+       
+       for (var i = 0; i<arr.length ; i++) {
+         //imgId= "img"+ i.toString;
+           out += '<div class="gallery"> </br> <img class= "'+ arr[i].imgId +'" src="' + arr[i].url + '" onclick="imagePop(this)" >' + 
+            arr[i].caption + '</div>';
+        }
+
+        document.getElementById("image_file").innerHTML=out;
+      }
+      
+
+    </script>
+
+   <!--javascript code to pop a image with delete button --> 
+<script type="text/javascript">
+  function imagePop(element){
+        var dta= element.src;
+        var modal=document.getElementById('myModal');
+        var imgInd=document.getElementById('img01');
+        modal.style.display = "block";
+        imgInd.src = dta;
+
+        var spanClose = document.getElementsByClassName("closeN")[0];
+        var spanDelete=document.getElementsByClassName("delete")[0];
+        var spanEdit=document.getElementsByClassName("edit")[0];
+
+         // When the user clicks on <span> (x), close the modal
+         spanClose.onclick = function() { 
+        modal.style.display = "none";
+      }
+      //edit
+     /* spanEdit.onclick=function(){
+        for(var i=0; i<arr.length;i++){
+
+          if(arr[i].url!=dta){
+
+          }
+        }
+      }
+*/
+
+
+      //delete
+      
+      spanDelete.onclick= function(){
+
+         if(confirm("Are you sure to delete this item!!")){
+
+             for(var i=0; i<arr.length;i++){
+              
+              console.log(dta + " " +arr[i].url );
+                    if(arr[i].url!=dta){
+                      console.log(i);
+                       arr.splice((i+1),1);
+                       alert("image successfully delete");
+                       modal.style.display= "none";
+                       myFunction(arr);
+                       return;
+                    }
+             }
+         }else{
+             alert("You have cancel the process of deletion");
+             modal.style.display= "none";
+         }
+      }
+
+
+  }
+  
+</script>
+
+
+
+      <script type="text/javascript">
+   
+      function addImage(){
+        var newData=[document.getElementById('url').value, document.getElementById('name').value, document.getElementById('information').value, document.getElementById('uDate').value];
+        arr.push({
+          "url" : newData[0],
+          "imgId" :newData[1],
+          "caption" :newData[2],
+          "Uploaded Date" :newData[3]
+        });
+        myFunction(arr);
+     
+      }
+
+    </script>
+
+
+    <script type="text/javascript">
+      $(function() {
+    $(".button").click(function() {
+        $("#myform #valueFromMyButton").text($(this).val().trim());
+        $("#myform input[type=text]").val('');
+        $("#myform").show(500);
+    });
+
+    $("#closePopup").click(function() {
+        $("#valueFromMyModal").val($("#myform input[type=text]").val().trim());
+        $("#myform").hide(400);
+    });
+});
+    </script>  
+
+
+   <div id="panel">
+  <input type="button" class="button" value="Add Image" id="btn1">
+
+  <br>
+
+  <!-- Dialog Box-->
+  <div class="dialog" id="myform">
+   <button type="button" id="closePopup">Close</button>
+
+      <center><h3 id=valueFromMyButton></h3></center>
+     <h4>ADD IMAGE</h4>
+    <form>
+      <label id="value">Image URL          </label>
+      <input type="text" id="url">
+      
+    </form>
+     <form>
+      <label id="value">Name 
+      </label>
+      <input type="text" id="name">
+     
+    </form>
+     <form>
+      <label id="value">Information
+      </label>
+      <input type="text" id="information">
+      
+    </form>
+     <form>
+      <label id="value">Uploaded Date
+      </label>
+      <input type="date" id="uDate">
+      <div align="center">
+        <input type="button" value="submit" onclick="addImage()" id="btnOK">
+      </div>
+    </form>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

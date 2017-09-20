@@ -1,0 +1,51 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>My Gallery</title>
+<link rel="stylesheet" type="text/css" href="p.css">
+<script type="text/javascript" src="dcl.js"></script>
+</head>
+<body onload="Dgclock();">
+	<div id="wrapper">
+     <form name="clock" onSubmit="0" runat="server">
+        <input type="text" align="right"  name="face" size=20 disabled="disabled"; value="" style="background-color:grey; text-align:center;font-size:40px;float:right; color:black; height:50px;text-shadow: black 0px 2px 0px;font-weight:1200;" >
+     </form>
+    <h1><i>Gallery<i></h1>
+     
+    <div align="right">
+    <form  action="http://www.google.com/search" target="_blank" method="GET">
+    <input type="textbox" name="q">
+    <input type="submit" value="search"style="cursor:pointer;">
+    </form>
+    </div>
+    <div id=size class="mm">
+       <table><tr><td>
+           <a class="xy" href="index.html" >HOME</a></td> 
+          <td><a class="xy" href="aboutme.html">ABOUT ME</a></td>
+            <td> <a class="xy" href="Admin gallery">ADMIN GALLERY </a></td>
+           <td><a class="xy" href="cme.html">CONTACT ME</a></td></tr> </table>
+
+    </div> 
+
+    <div id="image_file" style="width:100%"></div>
+    <script type="text/javascript" src="gallery.js"></script>
+    <script type="text/javascript">
+      myFunction(arr);
+      function myFunction(arr){
+        var out="";
+       
+       for (var i = 0; i<arr.length ; i++) {
+         // out+= '<div class="gallery" id="image_file">';
+           out += '<div class="gallery"> </br><a href="'+ arr[i].url +'" > <img src="' + arr[i].url + '"  width="600" height="400">' + 
+            arr[i].caption + '</a></div>';
+        }
+        document.getElementById("image_file").innerHTML=out;
+      }
+
+    </script>
+
+
+  </div>
+</div>
+</body>
+</html>
