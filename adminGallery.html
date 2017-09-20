@@ -90,13 +90,13 @@
       //delete
       
       spanDelete.onclick= function(){
-
+	dta =dta.replace('https://k-vikash.github.io/','');
          if(confirm("Are you sure to delete this item!!")){
 
              for(var i=0; i<arr.length;i++){
               
               //console.log(dta + " " +arr[i].url );
-                    if(arr[i].url!=dta){
+                    if(arr[i].url==dta){
                       //console.log(i);
                        arr.splice((i+1),1);
                        alert("image successfully delete");
